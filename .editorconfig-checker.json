@@ -4,15 +4,10 @@
   "IgnoreDefaults": false,
   "SpacesAftertabs": false,
   "NoColor": false,
-  "Exclude": [
-    "LICENSE",
-    "\\.initializers",
-    "\\.vscode"
-  ],
+  "Exclude": ["LICENSE", "\\.initializers", "\\.vscode"],
   "AllowedContentTypes": [],
   "PassedFiles": [],
   "Disable": {
-    // set these options to true to disable specific checks
     "EndOfLine": false,
     "Indentation": false,
     "InsertFinalNewline": false,
