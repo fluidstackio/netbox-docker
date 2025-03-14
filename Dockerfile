@@ -44,6 +44,8 @@ RUN \
 ARG FROM
 FROM ${FROM} AS main
 
+COPY docker/unit.list /etc/apt/sources.list.d/unit.list
+ADD --chmod=444 --chown=0:0 https://unit.nginx.org/keys/nginx-keyring.gpg /usr/share/keyrings/nginx-keyring.gpg
 RUN export DEBIAN_FRONTEND=noninteractive \
     && apt-get update -qq \
     && apt-get upgrade \
@@ -60,15 +62,8 @@ RUN export DEBIAN_FRONTEND=noninteractive \
       openssl \
       python3 \
       tini \
-    && curl --silent --output /usr/share/keyrings/nginx-keyring.gpg \
-      https://unit.nginx.org/keys/nginx-keyring.gpg \
-    && echo "deb [signed-by=/usr/share/keyrings/nginx-keyring.gpg] https://packages.nginx.org/unit/ubuntu/ noble unit" \
-      > /etc/apt/sources.list.d/unit.list \
-    && apt-get update -qq \
-    && apt-get install \
-      --yes -qq --no-install-recommends \
-      unit=1.34.1-1~noble \
-      unit-python3.12=1.34.1-1~noble \
+      unit-python3.12=1.34.2-1~noble \
+      unit=1.34.2-1~noble \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy the modified 'requirements*.txt' files, to have the files actually used during installation
