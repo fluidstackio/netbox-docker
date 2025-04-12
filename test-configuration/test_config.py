@@ -7,5 +7,6 @@ PLUGINS = [
     'netbox.tests.dummy_plugin',
 ]
 
+ALLOW_TOKEN_RETRIEVAL = True
 
 DEFAULT_PERMISSIONS = {}
