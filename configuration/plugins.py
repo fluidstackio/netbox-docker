@@ -5,8 +5,10 @@
 # See https://github.com/netbox-community/netbox-docker/wiki/Using-Netbox-Plugins
 
 PLUGINS = [
+  'netbox_inventory',
   'netbox_branching', # MUST BE THE LAST PLUGIN
 ]
 
 PLUGINS_CONFIG = {
+  "netbox_inventory": {},
 }
