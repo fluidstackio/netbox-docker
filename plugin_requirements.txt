@@ -2,3 +2,4 @@ netboxlabs-netbox-branching
 netbox-inventory
 netbox-lifecycle
 netbox-floorplan-plugin
+netbox-topology-views
