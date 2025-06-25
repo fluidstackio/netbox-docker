@@ -7,10 +7,12 @@
 PLUGINS = [
   'netbox_inventory',
   'netbox_lifecycle',
+  'netbox_floorplan',
   'netbox_branching', # MUST BE THE LAST PLUGIN
 ]
 
 PLUGINS_CONFIG = {
   "netbox_inventory": {},
   "netbox_lifecycle": {},
+  "netbox_floorplan": {},
 }
