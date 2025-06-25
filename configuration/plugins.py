@@ -9,6 +9,7 @@ PLUGINS = [
   'netbox_lifecycle',
   'netbox_floorplan',
   'netbox_topology_views',
+  'netbox_qrcode',
   'netbox_branching', # MUST BE THE LAST PLUGIN
 ]
 
@@ -17,4 +18,5 @@ PLUGINS_CONFIG = {
   "netbox_lifecycle": {},
   "netbox_floorplan": {},
   "netbox_topology_views": {},
+  "netbox_qrcode": {},
 }
