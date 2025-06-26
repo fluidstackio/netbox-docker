@@ -1,0 +1,2 @@
+netboxlabs-netbox-branching
+netbox-inventory
