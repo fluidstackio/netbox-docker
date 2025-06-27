@@ -9,4 +9,4 @@ DOCKER_IMAGE := $(DOCKER_REPO)/$(DOCKER_NAME):$(DOCKER_TAG)
 DOCKERFILE ?= Dockerfile.plugins
 
 docker-build: plugin_requirements.txt configuration/*
-	docker build --build-arg NETBOX_VERSION=$(NETBOX_VERSION) --no-cache -f $(DOCKERFILE) -t $(DOCKER_IMAGE) .
+	docker build --platform linux/amd64 --build-arg NETBOX_VERSION=$(NETBOX_VERSION) --no-cache -f $(DOCKERFILE) -t $(DOCKER_IMAGE) .
