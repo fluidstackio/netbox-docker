@@ -3,8 +3,8 @@ ENVIRONMENT ?= dev
 
 DOCKER_REPO := ghcr.io/fluidstackio
 DOCKER_NAME := netbox-plugins-$(ENVIRONMENT)
-DOCKER_TAG ?= v0.1.0
-DOCKER_IMAGE := $(DOCKER_REPO)/$(DOCKER_NAME):$(DOCKER_TAG)
+VERSION ?= v0.1.0
+DOCKER_IMAGE := $(DOCKER_REPO)/$(DOCKER_NAME):$(VERSION)
 
 DOCKERFILE ?= Dockerfile.plugins
 
