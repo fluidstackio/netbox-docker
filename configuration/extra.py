@@ -32,15 +32,18 @@
 # REMOTE_AUTH_DEFAULT_PERMISSIONS = {}
 
 
+# Configure S3 storage backend
+import os
+
 ## By default uploaded media is stored on the local filesystem. Using Django-storages is also supported. Provide the
 ## class path of the storage driver in STORAGE_BACKEND and any configuration options in STORAGE_CONFIG. For example:
-# STORAGE_BACKEND = 'storages.backends.s3boto3.S3Boto3Storage'
-# STORAGE_CONFIG = {
-#     'AWS_ACCESS_KEY_ID': 'Key ID',
-#     'AWS_SECRET_ACCESS_KEY': 'Secret',
-#     'AWS_STORAGE_BUCKET_NAME': 'netbox',
-#     'AWS_S3_REGION_NAME': 'eu-west-1',
-# }
+STORAGE_BACKEND = 'storages.backends.s3boto3.S3Boto3Storage'
+STORAGE_CONFIG = {
+    'AWS_ACCESS_KEY_ID': os.environ.get('AWS_ACCESS_KEY_ID', ''),
+    'AWS_SECRET_ACCESS_KEY': os.environ.get('AWS_SECRET_ACCESS_KEY', ''),
+    'AWS_STORAGE_BUCKET_NAME': os.environ.get('AWS_STORAGE_BUCKET_NAME', 'netbox'),
+    'AWS_S3_REGION_NAME': os.environ.get('AWS_S3_REGION_NAME', 'us-east-1'),
+}
 
 
 ## This file can contain arbitrary Python code, e.g.:
